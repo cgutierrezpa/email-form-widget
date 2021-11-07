@@ -1,22 +1,8 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-#submit-email-form {
+.submit-email-widget-form {
   position: relative;
 }
 
-#submit-email {
+.submit-email-widget-button {
   font-family: "Es build", sans-serif;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -45,11 +31,11 @@ code {
   font-size: 20px;
 }
 
-#submit-email:hover {
+.submit-email-widget-button:hover {
   background-position: 94% 50%;
 }
 
-#email-field {
+.submit-email-widget-input {
   -webkit-text-size-adjust: 100%;
   --swatch_b0d4f0ae: hsla(108.889, 87.1%, 93.92%, 1);
   --swatch_3112d71c: hsla(190.714, 100%, 83.53%, 1);
@@ -86,22 +72,22 @@ code {
   font-size: 20px;
 }
 
-#email-error-msg {
+.submit-email-widget-error-msg {
   color: #f87171;
   font-size: 18px;
   border-radius: 8px;
 }
 
-#email-error-msg > svg {
+.submit-email-widget-error-msg > svg {
   margin-right: 5px;
 }
 
-#email-field.email-error {
+.submit-email-widget-input.email-error {
   border-color: #f87171;
 }
 
 @media screen and (max-width: 350px) {
-  #submit-email {
+  .submit-email-widget-button {
     font-size: 18px;
     background-image: none;
     width: 118px;

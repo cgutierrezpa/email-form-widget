@@ -73,7 +73,7 @@ const isValidEmail = (email) => {
   );
 };
 
-const App = () => {
+const App = ({ location }) => {
   const [email, setEmail] = React.useState("");
   const [error, setError] = React.useState("");
 
@@ -87,14 +87,15 @@ const App = () => {
       `https://app.capchase.com${email ? `?email=${email}` : ""}`,
       "_blank"
     );
-
+    console.log("location", location);
     if (window.analytics)
       window.analytics.track("Sign-up Button Clicked", {
-        location: "homepage-footer",
+        location,
       });
   };
 
   const onBlur = () => {
+    console.log("location", location);
     if (email && !isValidEmail(email))
       return setError("Introduce a valid work email");
     if (!window.analytics) return;
@@ -104,26 +105,25 @@ const App = () => {
     window.analytics.page();
     window.analytics.track("Email Provided", {
       email,
-      location: "homepage-footer",
+      location,
     });
   };
 
   return (
-    <div>
+    <div className="submit-email-widget-form">
       <input
-        id="email-field"
         type="text"
         value={email}
-        className={error ? "email-error" : ""}
+        className={`submit-email-widget-input${error ? " email-error" : ""}`}
         placeholder="Enter your email"
         onBlur={onBlur}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button onClick={submitEmail} id="submit-email">
+      <button onClick={submitEmail} className="submit-email-widget-button">
         Sign Up
       </button>
       {error && (
-        <p id="email-error-msg">
+        <p class="submit-email-widget-error-msg">
           <svg
             width="12"
             height="12"
